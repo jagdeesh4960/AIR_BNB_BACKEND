@@ -39,7 +39,6 @@ const loginController = async (req, res, next) => {
 
   try {
     const user = await User.authenticateUser(email, password);
-    console.log("user->", user);
 
     const token = await user.generateAuthToken();
     console.log("this way token -> ", token);
@@ -74,8 +73,16 @@ const logoutController = async (req, res, next) => {
   }
 };
 
+const currentUserController = async (req, res, next) => {
+  try {
+    const user = req.user;
+    res.status(200).json({ message: "authentication successfull", user: user });
+  } catch (error) {}
+};
+
 module.exports = {
   registerController,
   loginController,
   logoutController,
+  currentUserController,
 };
