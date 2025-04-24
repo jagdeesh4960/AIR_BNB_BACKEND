@@ -5,7 +5,7 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.printf(
-      (info) => `${info.status || 500} ${info.level}:${info.message}`
+      (info) => `${info.timestamp} ${info.level}:${info.message}`
     )
   ),
 
