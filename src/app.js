@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const userRoutes = require("./routes/userRoutes/user.routes.js");
 const propertyRoutes = require("./routes/propertyRoutes/property.routes.js");
+const bookingRoutes = require("../src/routes/bookingRoutes/booking.routes.js");
 const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
 const errorHandler = require("./middlewares/errorHandler.js");
@@ -18,6 +19,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/auth", userRoutes);
 app.use("/api/property", propertyRoutes);
+app.use("/api/booking", bookingRoutes);
 
 app.use(errorHandler);
 

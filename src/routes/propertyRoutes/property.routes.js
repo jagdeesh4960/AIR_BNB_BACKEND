@@ -28,4 +28,10 @@ router.get(
   propertyController.viewPropertyController
 );
 
+router.get(
+  "/search",
+  authMiddleware,
+  propertyController.searchPropertyController
+);
+
 module.exports = router;

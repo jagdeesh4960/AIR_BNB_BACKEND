@@ -7,3 +7,5 @@
 500 error:500 - POST - /api/auth/login - ::1
 500 error:500 - POST - /api/auth/login - ::1
 500 error:500 - POST - /api/auth/login
+2025-04-25T13:03:43.921Z error:500 - Error in fetching property data - GET - /api/property/view/680b7bf231aed037bc1ae08f - ::1
+2025-04-25T13:07:02.550Z error:500 - paymentInstance is not a function - POST - /api/booking/create - ::1

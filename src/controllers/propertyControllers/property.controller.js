@@ -92,9 +92,31 @@ const viewPropertyController = async (req, res, next) => {
   } catch (error) {}
 };
 
+const searchPropertyController = async (req, res, next) => {
+  try {
+    const { location, minPrice, maxPrice } = req.body;
+
+    const query = {
+      ...(location && { location: { $regex: "location", $options: "i" } }),
+      ...(minPrice && { price: { $gte: minPrice } }),
+      ...(maxPrice && { price: { $lte: maxPrice } }),
+    };
+
+    const property = await Property.find(query);
+
+    if (!property) return next(new CustomError("Property not found", 400));
+
+    res.status(200).json({
+      message: "Properties fetched",
+      data: property,
+    });
+  } catch (error) {}
+};
+
 module.exports = {
   propertyCreateController,
   updatePropertyController,
   deletePropertyController,
   viewPropertyController,
+  searchPropertyController
 };
