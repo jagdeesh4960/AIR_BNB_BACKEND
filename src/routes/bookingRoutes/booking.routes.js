@@ -10,4 +10,10 @@ router.post(
   bookingController.createBookingController
 );
 
+router.get(
+  "/user-bookings/:userId",
+  authMiddleware,
+  bookingController.viewBookingsController
+);
+
 module.exports = router;

@@ -1,0 +1,24 @@
+const bookingConfirmationTemplate = (
+  userName,
+  location,
+  checkin_date,
+  checkout_date
+) => {
+  return `
+    <h2>Hello ${userName},</h2>
+    <p>Thank you for your booking!</p>
+    <h3>Booking Details:</h3>
+    <ul>
+        <li><strong>Property:</strong> property- ${location}</li>
+        <li><strong>Check-in:</strong> ${checkin_date}</li>
+        <li><strong>Check-out:</strong> ${checkout_date}</li>
+    </ul>
+    <p>If you have any questions, feel free to reach out to our support team.</p>
+    <p>We hope you have a great stay!</p>
+    <h1>Hello bhai ab to party chiyeee</h1>
+    `;
+};
+
+module.exports = {
+  bookingConfirmationTemplate,
+};
