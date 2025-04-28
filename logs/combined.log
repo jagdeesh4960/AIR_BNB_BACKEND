@@ -11,3 +11,6 @@
 2025-04-25T13:07:02.550Z error:500 - paymentInstance is not a function - POST - /api/booking/create - ::1
 2025-04-26T12:52:04.024Z error:500 - jwt expired - POST - /api/booking/create - ::1
 2025-04-26T13:09:46.405Z error:500 - req is not defined - GET - /api/booking/user-bookings/68088e604e64ea6fed2abf71 - ::1
+2025-04-28T13:04:14.434Z error:500 - incorrect email or password  - POST - /api/auth/login - ::1
+2025-04-28T13:05:15.407Z error:500 - incorrect email or password  - POST - /api/auth/login - ::1
+2025-04-28T13:06:25.570Z error:500 - incorrect email or password  - POST - /api/auth/login - ::1

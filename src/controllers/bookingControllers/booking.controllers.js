@@ -42,7 +42,8 @@ const createBookingController = async (req, res, next) => {
       req.user.userName,
       property.location,
       checkin_date,
-      checkout_date
+      checkout_date,
+      razorpayOrder
     );
 
     await sendMail("r3557452@gmail.com", "Booking confirmed", bookingTemplate);
@@ -78,7 +79,32 @@ const viewBookingsController = async (req, res, next) => {
   } catch (error) {}
 };
 
+const cancelBookingController = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+
+    if (!id) return next(new CustomError("booking id not found", 404));
+
+    const bookings = await Booking.findById(id);
+    if (!bookings) return next(new CustomError("Booking not found", 404));
+
+    if (bookings.user_id.toString() !== req.user._id.toString())
+      return next(new CustomError("Unauthorized user", 401));
+
+    bookings.status = "Cancelled";
+    await bookings.save();
+
+    res.status(200).json({
+      success: true,
+      message: "Booking, cancelled",
+    });
+  } catch (error) {
+    next(new CustomError(error.message, 500));
+  }
+};
+
 module.exports = {
   createBookingController,
   viewBookingsController,
+  cancelBookingController,
 };
