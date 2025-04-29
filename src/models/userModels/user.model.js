@@ -2,28 +2,34 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-const userSchema = new mongoose.Schema({
-  userName: {
-    type: String,
-    required: true,
+const userSchema = new mongoose.Schema(
+  {
+    userName: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+    },
+    mobile: {
+      type: Number,
+      required: true,
+      maxLength: 10,
+    },
+    address: {
+      type: String,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+    isAdmin: { type: Boolean, default: false },
   },
-  email: {
-    type: String,
-    required: true,
-  },
-  mobile: {
-    type: Number,
-    required: true,
-    maxLength: 10,
-  },
-  address: {
-    type: String,
-  },
-  password: {
-    type: String,
-    required: true,
-  },
-});
+  {
+    timestamps: true,
+  }
+);
 
 userSchema.pre("save", async function (next) {
   if (this.isModified("password")) {
