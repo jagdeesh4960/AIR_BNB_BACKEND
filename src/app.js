@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const userRoutes = require("./routes/userRoutes/user.routes.js");
 const propertyRoutes = require("./routes/propertyRoutes/property.routes.js");
@@ -9,6 +10,13 @@ const reviewRoutes = require("./routes/reviewRoutes/review.routes.js");
 const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
 const errorHandler = require("./middlewares/errorHandler.js");
+
+app.use(
+  cors({
+    origin: true,
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

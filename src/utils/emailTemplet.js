@@ -34,7 +34,18 @@ const paymentConfirmationTemplate = (userName, location, status, amount) => {
   `;
 };
 
+const resetPasswordTemplate = (userName, link) => {
+  return `
+  <h2>Hello, ${userName}</h2>
+    <p>Reset password link</p>
+    <ul>
+        <li><strong>Reset link:</strong> ₹${link}</li>
+    </ul>
+  `;
+};
+
 module.exports = {
   bookingConfirmationTemplate,
   paymentConfirmationTemplate,
+  resetPasswordTemplate,
 };
