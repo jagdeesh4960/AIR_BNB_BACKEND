@@ -22,11 +22,13 @@ const processPaymentController = async (req, res, next) => {
     const razorpayOrder = await paymentInstance.orders.create(options);
 
     if (!razorpayOrder) return next(new CustomError("Error in payment", 400));
-
+     
     res.status(200).json({
       success: true,
       data: razorpayOrder,
-    });
+    },
+    
+  );
   } catch (error) {
     next(new CustomError(error.message, 500));
   }
@@ -37,7 +39,10 @@ const verifyPaymentController = async (req, res, next) => {
     const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =
       req.body;
 
+      console.log(razorpay_order_id, razorpay_payment_id, razorpay_signature )
+      
     if (!razorpay_order_id || !razorpay_payment_id || !razorpay_signature)
+      
       return next(new CustomError("razorpay order details required", 400));
 
     const booking = await Booking.findOne({

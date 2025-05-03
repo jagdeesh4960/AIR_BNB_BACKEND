@@ -7,8 +7,8 @@ const { resetPasswordTemplate } = require("../../utils/emailTemplet.js");
 const { sendMail } = require("../../utils/email.js");
 
 const registerController = async (req, res, next) => {
-  const { userName, email, password, mobile, address } = req.body;
-
+  const { userName, email, password, mobile,address} = req.body;
+   
   try {
     const existingUser = await User.findOne({ email });
     if (existingUser) return next(new CustomError("user already exist", 409));
@@ -21,6 +21,7 @@ const registerController = async (req, res, next) => {
       mobile,
     });
 
+    
     const token = await user.generateAuthToken();
     console.log("token inside controller->", token);
 

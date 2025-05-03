@@ -17,13 +17,12 @@ const adminMiddleware = async (req, res, next) => {
     const decode = jwt.verify(token, process.env.JWT_SECRET);
     console.log("decoded-->", decode);
     const user = await User.findById(decode.id);
-
+    
     if (!user) return next(new CustomError("user not fount", 401));
-
-    if (req.user.isAdmin !== true)
+    // if (req.user.isAdmin !== true)
+      if (user.isAdmin !== true)
       return next(new CustomError("Access Denied", 400));
 
-    req.user = user;
     next();
   } catch (error) {
     next(new CustomError(error.message, 500));

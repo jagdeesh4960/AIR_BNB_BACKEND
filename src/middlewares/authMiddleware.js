@@ -15,7 +15,6 @@ const authMiddleware = async (req, res, next) => {
     }
 
     const decode = jwt.verify(token, process.env.JWT_SECRET);
-    console.log("decoded-->", decode);
     const user = await User.findById(decode.id);
 
     if (!user) return next(new CustomError("user not fount", 401));

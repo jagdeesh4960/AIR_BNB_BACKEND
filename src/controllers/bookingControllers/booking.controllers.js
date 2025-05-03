@@ -1,3 +1,4 @@
+const { log } = require("winston");
 const Booking = require("../../models/bookingModels/booking.models.js");
 const Property = require("../../models/propertyModels/property.model.js");
 const paymentInstance = require("../../services/payment.services.js");
@@ -8,10 +9,11 @@ const { bookingConfirmationTemplate } = require("../../utils/emailTemplet.js");
 const createBookingController = async (req, res, next) => {
   try {
     const { property_id, checkin_date, checkout_date, totalPrice } = req.body;
-
-    const property = await Property.findById(property_id);
+    
+    const property = await Property.findById(property_id); 
+        
     if (!property) return next(new CustomError("Property not found", 400));
-
+    
     if (!property_id && !checkin_date && !checkout_date && !totalPrice)
       return next(new CustomError("All fields are required", 400));
 
@@ -24,20 +26,29 @@ const createBookingController = async (req, res, next) => {
       status: "Pending",
     });
 
+    
+
     const options = {
       amount: totalPrice * 100,
       currency: "INR",
       receipt: `receipt ${booking._id}`,
       payment_capture: 1,
     };
-
-    const razorpayOrder = await paymentInstance.orders.create(options);
-
-    booking.razorpayOrderId = razorpayOrder.id;
-    await booking.save();
-
+    
+     
+      
+    let razorpayOrder;
+    try {
+      razorpayOrder = await paymentInstance.orders.create(options);
+      booking.razorpayOrderId = razorpayOrder.id;
+      await booking.save();
+    } catch (err) {
+    
+      return next(new CustomError("Error creating Razorpay order: " + err.message, 500));
+    }
+    
     // email--------
-
+   
     const bookingTemplate = bookingConfirmationTemplate(
       req.user.userName,
       property.location,
@@ -46,8 +57,9 @@ const createBookingController = async (req, res, next) => {
       razorpayOrder
     );
 
-    await sendMail("r3557452@gmail.com", "Booking confirmed", bookingTemplate);
 
+    await sendMail("jag84960@gmail.com", "Booking confirmed", bookingTemplate);
+    
     res.status(200).json({
       success: true,
       data: booking,

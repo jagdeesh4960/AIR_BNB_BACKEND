@@ -40,9 +40,10 @@ const propertyCreateController = async (req, res, next) => {
 const deletePropertyController = async (req, res, next) => {
   try {
     const { id } = req.params;
+   console.log(id);
 
     if (!id) return next(new CustomError("property id is required", 400));
-
+   
     const deletedProperty = await Property.findByIdAndDelete(id);
     if (!deletedProperty)
       return next(new CustomError("Error in deletion property", 400));
@@ -61,7 +62,7 @@ const updatePropertyController = async (req, res, next) => {
 
     const updatedProperty = await Property.findByIdAndUpdate(id, req.body, {
       new: true,
-      runValidators: true,
+      runValidators:true,
     });
 
     if (!updatedProperty)
@@ -97,7 +98,7 @@ const searchPropertyController = async (req, res, next) => {
     const { location, minPrice, maxPrice } = req.body;
 
     const query = {
-      ...(location && { location: { $regex: "location", $options: "i" } }),
+      ...(location && { location: { $regex: location, $options: "i" } }),
       ...(minPrice && { price: { $gte: minPrice } }),
       ...(maxPrice && { price: { $lte: maxPrice } }),
     };

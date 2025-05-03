@@ -14,3 +14,73 @@
 2025-04-28T13:04:14.434Z error:500 - incorrect email or password  - POST - /api/auth/login - ::1
 2025-04-28T13:05:15.407Z error:500 - incorrect email or password  - POST - /api/auth/login - ::1
 2025-04-28T13:06:25.570Z error:500 - incorrect email or password  - POST - /api/auth/login - ::1
+2025-05-01T05:24:32.270Z error:500 - User validation failed: userName: Path `userName` is required., email: Path `email` is required., mobile: Path `mobile` is required., password: Path `password` is required. - POST - /api/auth/register - ::1
+2025-05-01T05:33:46.038Z error:400 - Expected double-quoted property name in JSON at position 53 - POST - /api/auth/login - ::1
+2025-05-01T05:46:09.217Z error:500 - Unauthorized user! - POST - /api/property/create - ::1
+2025-05-01T06:02:06.517Z error:500 - Cast to ObjectId failed for value ":" (type string) at path "_id" for model "Property" - DELETE - /api/property/delete/:?id=68130abae7433a8d0609a1c7 - ::1
+2025-05-01T06:05:41.488Z error:500 - Cast to ObjectId failed for value "68130abae7433a8d0609a1c7  " (type string) at path "_id" for model "Property" - DELETE - /api/property/delete/68130abae7433a8d0609a1c7%20%20 - ::1
+2025-05-01T06:07:38.581Z error:500 - Cast to ObjectId failed for value ""68130abae7433a8d0609a1c7"" (type string) at path "_id" for model "Property" - DELETE - /api/property/delete/%2268130abae7433a8d0609a1c7%22 - ::1
+2025-05-01T06:54:02.931Z error:500 - jwt expired - POST - /api/booking/create - ::1
+2025-05-01T06:54:49.746Z error:500 -  - POST - /api/booking/create - ::1
+2025-05-01T06:56:15.019Z error:500 -  - POST - /api/booking/create - ::1
+2025-05-01T06:57:59.780Z error:500 -  - POST - /api/booking/create - ::1
+2025-05-01T06:59:18.766Z error:500 -  - POST - /api/booking/create - ::1
+2025-05-01T07:01:51.786Z error:500 -  - POST - /api/booking/create - ::1
+2025-05-01T07:03:26.754Z error:500 -  - POST - /api/booking/create - ::1
+2025-05-01T07:04:56.940Z error:500 -  - POST - /api/booking/create - ::1
+2025-05-01T07:06:02.510Z error:500 - property is not defined - POST - /api/booking/create - ::1
+2025-05-01T07:10:29.124Z error:500 -  - POST - /api/booking/create - ::1
+2025-05-01T07:11:37.216Z error:500 -  - POST - /api/booking/create - ::1
+2025-05-01T07:24:10.763Z error:500 -  - POST - /api/booking/create - ::1
+2025-05-01T07:32:52.589Z error:500 - Razorpay order creation failed - POST - /api/booking/create - ::1
+2025-05-01T07:33:48.521Z error:500 - Razorpay order creation failed - POST - /api/booking/create - ::1
+2025-05-01T07:36:40.961Z error:500 - Razorpay order creation failed - POST - /api/booking/create - ::1
+2025-05-01T11:20:49.157Z error:500 - Razorpay order creation failed - POST - /api/booking/create - ::1
+2025-05-01T11:32:05.801Z error:500 - Razorpay order creation failed - POST - /api/booking/create - ::1
+2025-05-01T11:32:16.278Z error:500 - Razorpay order creation failed - POST - /api/booking/create - ::1
+2025-05-01T11:32:33.967Z error:500 - undefined - POST - /api/booking/create - ::1
+2025-05-01T11:33:38.436Z error:500 - error is not defined - POST - /api/booking/create - ::1
+2025-05-01T11:33:55.639Z error:500 - razorpayOrder is not defined - POST - /api/booking/create - ::1
+2025-05-01T11:37:09.210Z error:500 - razorpayOrder is not defined - POST - /api/booking/create - ::1
+2025-05-01T11:39:48.357Z error:500 -  - POST - /api/booking/create - ::1
+2025-05-01T11:40:04.911Z error:500 -  - POST - /api/booking/create - ::1
+2025-05-01T11:40:31.661Z error:500 -  - POST - /api/booking/create - ::1
+2025-05-01T11:40:56.276Z error:500 - [object Object] - POST - /api/booking/create - ::1
+2025-05-01T11:41:38.621Z error:500 - [object Object] - POST - /api/booking/create - ::1
+2025-05-01T11:42:08.012Z error:500 -  - POST - /api/booking/create - ::1
+2025-05-01T11:46:00.220Z error:500 -  - POST - /api/booking/create - ::1
+2025-05-01T11:58:57.657Z error:500 - [object Object] - POST - /api/booking/create - ::1
+2025-05-01T11:59:26.100Z error:500 -  - POST - /api/booking/create - ::1
+2025-05-01T12:05:40.640Z error:500 - Error creating Razorpay order: undefined - POST - /api/booking/create - ::1
+2025-05-01T12:31:14.623Z error:500 - jwt expired - POST - /api/booking/create - ::1
+2025-05-01T14:09:25.116Z error:500 - jwt expired - POST - /api/payment/payment-verify - ::1
+2025-05-01T14:10:02.788Z error:500 - razorpay order details required - POST - /api/payment/payment-verify - ::1
+2025-05-01T14:14:17.624Z error:500 - log is not defined - POST - /api/payment/payment-verify - ::1
+2025-05-01T14:15:03.462Z error:500 - razorpay order details required - POST - /api/payment/payment-verify - ::1
+2025-05-02T11:31:08.836Z error:500 - Cannot read properties of undefined (reading 'isAdmin') - GET - /api/admin/all-users - ::1
+2025-05-02T11:44:37.541Z error:400 - Expected double-quoted property name in JSON at position 68 - POST - /api/auth/login - ::1
+2025-05-02T11:46:43.574Z error:500 - Cannot read properties of undefined (reading 'isAdmin') - GET - /api/admin/all-users - ::1
+2025-05-02T11:48:08.719Z error:500 - Cannot read properties of undefined (reading 'isAdmin') - GET - /api/admin/all-users - ::1
+2025-05-02T11:52:16.799Z error:500 - Cannot read properties of undefined (reading 'isAdmin') - GET - /api/admin/all-users - ::1
+2025-05-02T11:53:51.720Z error:500 - Cannot read properties of undefined (reading 'isAdmin') - GET - /api/admin/all-users - ::1
+2025-05-02T11:55:52.649Z error:500 - Cannot read properties of undefined (reading 'isAdmin') - GET - /api/admin/all-users - ::1
+2025-05-02T12:19:31.345Z error:500 - User not found  - POST - /api/auth/login - ::1
+2025-05-02T12:27:52.236Z error:500 - Access denied - POST - /api/review/create - ::1
+2025-05-02T12:35:11.430Z error:500 - All fields is required - POST - /api/property/create - ::1
+2025-05-02T12:35:27.281Z error:500 - All fields is required - POST - /api/property/create - ::1
+2025-05-02T12:35:59.356Z error:500 - All fields is required - POST - /api/property/create - ::1
+2025-05-02T19:00:13.460Z error:500 - user already exist - POST - /api/auth/register - ::1
+2025-05-02T19:00:14.701Z error:500 - user already exist - POST - /api/auth/register - ::1
+2025-05-02T19:00:33.289Z error:500 - user already exist - POST - /api/auth/register - ::1
+2025-05-02T19:00:34.342Z error:500 - user already exist - POST - /api/auth/register - ::1
+2025-05-02T19:00:34.560Z error:500 - user already exist - POST - /api/auth/register - ::1
+2025-05-02T19:01:07.238Z error:500 - user already exist - POST - /api/auth/register - ::1
+2025-05-02T19:01:09.187Z error:500 - user already exist - POST - /api/auth/register - ::1
+2025-05-03T10:16:44.633Z error:500 - Unauthorized user! - GET - /api/auth/current-user - ::1
+2025-05-03T10:35:18.987Z error:500 - Unauthorized user! - GET - /api/auth/current-user - ::1
+2025-05-03T10:55:14.776Z error:500 - Unauthorized user! - GET - /api/auth/current-user - ::1
+2025-05-03T10:55:16.769Z error:500 - Unauthorized user! - GET - /api/auth/current-user - ::1
+2025-05-03T10:55:17.791Z error:500 - Unauthorized user! - GET - /api/auth/current-user - ::1
+2025-05-03T10:57:36.792Z error:500 - Unauthorized user! - GET - /api/auth/current-user - ::1
+2025-05-03T10:59:00.421Z error:500 - Unauthorized user! - GET - /api/auth/current-user - ::1
+2025-05-03T11:01:21.013Z error:500 - Unauthorized user! - GET - /api/auth/current-user - ::1
