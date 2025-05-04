@@ -1,6 +1,6 @@
 const User = require("../../models/userModels/user.model.js");
 const bcrypt = require("bcrypt");
-const CustomError = require("../../utils/CustomError.js");
+const CustomError = require("../../utils/customError.js");
 const cacheClient = require("../../services/cache.services.js");
 const jwt = require("jsonwebtoken");
 const { resetPasswordTemplate } = require("../../utils/emailTemplet.js");
