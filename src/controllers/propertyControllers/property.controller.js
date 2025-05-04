@@ -1,5 +1,5 @@
 const Property = require("../../models/propertyModels/property.model.js");
-const CustomError = require("../../utils/CustomError");
+const CustomError = require("../../utils/customError.js");
 
 const propertyCreateController = async (req, res, next) => {
   try {

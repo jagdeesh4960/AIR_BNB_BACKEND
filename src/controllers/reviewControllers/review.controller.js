@@ -1,6 +1,6 @@
 const Review = require("../../models/reviewModels/review.model.js");
 const Property = require("../../models/propertyModels/property.model.js");
-const CustomError = require("../../utils/CustomError");
+const CustomError = require("../../utils/customError.js");
 const Booking = require("../../models/bookingModels/booking.models.js");
 
 const createReviewController = async (req, res, next) => {

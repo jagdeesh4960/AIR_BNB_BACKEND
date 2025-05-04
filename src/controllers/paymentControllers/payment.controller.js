@@ -1,6 +1,6 @@
 const Booking = require("../../models/bookingModels/booking.models.js");
 const paymentInstance = require("../../services/payment.services.js");
-const CustomError = require("../../utils/CustomError.js");
+const CustomError = require("../../utils/customError.js");
 const crypto = require("crypto");
 const { paymentConfirmationTemplate } = require("../../utils/emailTemplet.js");
 const { sendMail } = require("../../utils/email.js");

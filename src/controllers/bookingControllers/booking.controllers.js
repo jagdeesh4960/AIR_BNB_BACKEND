@@ -2,7 +2,7 @@ const { log } = require("winston");
 const Booking = require("../../models/bookingModels/booking.models.js");
 const Property = require("../../models/propertyModels/property.model.js");
 const paymentInstance = require("../../services/payment.services.js");
-const CustomError = require("../../utils/CustomError");
+const CustomError = require("../../utils/customError.js");
 const { sendMail } = require("../../utils/email.js");
 const { bookingConfirmationTemplate } = require("../../utils/emailTemplet.js");
 

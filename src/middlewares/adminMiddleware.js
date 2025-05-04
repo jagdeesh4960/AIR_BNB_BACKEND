@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const User = require("../models/userModels/user.model.js");
-const CustomError = require("../utils/CustomError");
+const CustomError = require("../utils/customError.js");
 const cacheClient = require("../services/cache.services.js");
 
 const adminMiddleware = async (req, res, next) => {
